@@ -49,7 +49,7 @@ console.log(getReadingStatus(0));
 console.log(getReadingStatus(1));
 console.log(getReadingStatus(2));
 
-//Task 5
+//Task 5a
 var cart = [ 
    {
        name: 'Shoes',
@@ -69,7 +69,7 @@ var cart = [
 
 function addItem(newItem){
     cart.push(newItem); //push API adds to the array
-    console.log(cart);
+    //console.log(cart);
 }
 
 var newItem = {
@@ -79,3 +79,46 @@ var newItem = {
 };
 
 addItem(newItem);
+
+//Task 5b
+function sortCart(keyName){
+    if(keyName == "quantity"){
+        cart.sort(function(a,b){
+            return a.quantity - b.quantity;
+        });
+    }
+    else if(keyName == "price"){
+        cart.sort(function(a, b) {
+            return a.price - b.price;
+        });
+    }
+    else{
+        cart.sort(function(a, b) {
+           var nameA = a.name.toUpperCase(); 
+           var nameB = b.name.toUpperCase(); 
+           if (nameA < nameB) {
+               return -1;
+           }
+           if (nameA > nameB) {
+               return 1;
+               
+           }
+           return 0; 
+        });
+    }
+    console.log(cart);
+}
+
+//sortCart("name");
+sortCart("price");
+//sortCart("quantity");
+
+//Task 5c
+function findByName(name){
+    
+}
+
+//Task 5d
+function totalPrice(){
+    
+}
