@@ -120,5 +120,14 @@ function findByName(name){
 
 //Task 5d
 function totalPrice(){
+    var cost = 0;
+    var totalCost = 0;
+    cart.forEach(function(i,index){
+        var cost = i.price * i.quantity;
+        totalCost = totalCost + cost;
+    });
     
+    console.log(totalCost);
 }
+
+totalPrice();
