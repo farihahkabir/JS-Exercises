@@ -115,8 +115,14 @@ sortCart("price");
 
 //Task 5c
 function findByName(name){
-    
+    var item = cart.filter(obj =>{
+        return obj.name.includes(name);
+    });
+    console.log(item);
 }
+
+findByName("Shoes");
+findByName("Watch");
 
 //Task 5d
 function totalPrice(){
